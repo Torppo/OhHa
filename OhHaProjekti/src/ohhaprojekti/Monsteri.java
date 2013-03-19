@@ -47,7 +47,7 @@ public class Monsteri implements Otus{
         return this.kunto;
     }
     @Override
-    public void Puolusta(Hyokkays hyokkays) {
+    public void puolusta(Hyokkays hyokkays) {
         if(hyokkays.osumaSumma > this.puolustus) {
             this.kunto = this.kunto - hyokkays.vahinkoSumma;
         }

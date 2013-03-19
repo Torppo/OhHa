@@ -14,5 +14,5 @@ public interface Otus {
     
     public Hyokkays hyokkaa();
     
-    public void Puolusta(Hyokkays Hyokkays);
+    public void puolusta(Hyokkays Hyokkays);
 }
