@@ -29,8 +29,8 @@ public class Pelaaja extends Otus {
         this.puolustus = puolustus;
     }
     @Override
-    public void liiku() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean liiku(int x, int y) {
+       return false;
     }
     @Override
     public Hyokkays hyokkaa() {

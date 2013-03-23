@@ -19,7 +19,7 @@ public abstract class Otus {
     private int puolustus = 0;
     private Paikka paikka;
     
-    public abstract void liiku();
+    public abstract boolean liiku(int x, int y);
     
     public Hyokkays hyokkaa() {
         Random noppa = new Random();

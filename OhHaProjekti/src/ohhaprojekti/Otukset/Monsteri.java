@@ -29,7 +29,7 @@ public class Monsteri extends Otus{
     }
 
     @Override
-    public void liiku() {
+    public boolean liiku(int x, int y) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

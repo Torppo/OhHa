@@ -4,6 +4,8 @@
  */
 package ohhaprojekti;
 
+import ohhaprojekti.Toiminta.Pelilauta;
+
 /**
  *
  * @author pisapisa
@@ -15,5 +17,9 @@ public class OhHaProjekti {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Pelilauta lauta = new Pelilauta(10,10);
+        lauta.tuubaa();
+        lauta.tulosta();
+        System.out.println(lauta.palautaRuutu(9, 5));
     }
 }
