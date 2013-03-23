@@ -1,11 +1,13 @@
+package OtusTestit;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import ohhaprojekti.Hyokkays;
-import ohhaprojekti.Paikka;
-import ohhaprojekti.Pelaaja;
+import ohhaprojekti.Toiminta.Hyokkays;
+import ohhaprojekti.Toiminta.Paikka;
+import ohhaprojekti.Otukset.Pelaaja;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
