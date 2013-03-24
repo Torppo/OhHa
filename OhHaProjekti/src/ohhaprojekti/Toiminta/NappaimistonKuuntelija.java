@@ -26,7 +26,7 @@ public class NappaimistonKuuntelija implements KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_UP) {
-            otus.liiku(0,1);
+            otus.liiku(0, 1);
         }
         else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
             otus.liiku(0, -1);

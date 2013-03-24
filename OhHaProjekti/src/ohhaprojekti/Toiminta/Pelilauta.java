@@ -25,6 +25,15 @@ public class Pelilauta {
         }
         
     }
+    public int palautaLeveys() {
+        return this.leveys;
+    }
+    public int palautaKorkeus() {
+        return this.korkeus;
+    }
+    public ArrayList<Ruutu> palautaRuutuLista() {
+        return this.ruudut;
+    }
     public Ruutu palautaRuutu(int x, int y) {
         return ruudut.get(y * this.leveys + x);
     }

@@ -12,7 +12,7 @@ import ohhaprojekti.Otukset.Otus;
  *
  * @author pii
  */
-class Ruutu {
+public class Ruutu {
     public Boolean seina;
     public Boolean havaittu;
     public Otus otus;

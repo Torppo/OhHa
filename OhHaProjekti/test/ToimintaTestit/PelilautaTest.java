@@ -4,6 +4,7 @@
  */
 package ToimintaTestit;
 
+import ohhaprojekti.Toiminta.Pelilauta;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,6 +17,7 @@ import static org.junit.Assert.*;
  * @author pii
  */
 public class PelilautaTest {
+    private Pelilauta lauta;
     
     public PelilautaTest() {
     }
@@ -30,6 +32,7 @@ public class PelilautaTest {
     
     @Before
     public void setUp() {
+        this.lauta = new Pelilauta(10, 12);
     }
     
     @After
@@ -40,4 +43,16 @@ public class PelilautaTest {
     //
     // @Test
     // public void hello() {}
+    @Test
+    public void konstruktoriAsettaaKorkeudenOikein() {
+        assertEquals(10, this.lauta.palautaKorkeus());
+    }
+    @Test
+    public void konstruktoriAsettaaLeveydenOikein() {
+        assertEquals(12, this.lauta.palautaLeveys());
+    }
+    @Test
+    public void konstruktoriLuoRuutujaOikeanMaaran() {
+        assertEquals(10*12, this.lauta.palautaRuutuLista().size());
+    }
 }
