@@ -6,6 +6,7 @@ package ohhaprojekti.Toiminta;
 
 import java.util.ArrayList;
 import java.util.Random;
+import ohhaprojekti.Otukset.Otus;
 
 /**
  *
@@ -50,7 +51,25 @@ public class Pelilauta {
         }
         
     }
-    
+    public ArrayList<String> palautaMerkkijonot() {
+        ArrayList<String> jonot = new ArrayList<String>();
+        for (int i = 0; i < this.korkeus; i++) {
+            String jono = new String();
+            for (int j = 0; j < this.leveys; j++) {
+                jono += this.ruudut.get(i*this.leveys+j).toString();
+            }
+            jonot.add(jono);
+        }
+        return jonot;
+    }
+    public void lisaaOtusRuutuun(Paikka paikka, Otus otus) {
+        this.ruudut.get(paikka.y*this.leveys+paikka.x).otus = otus;
+        otus.muutaPaikkaa(paikka);
+        this.ruudut.get(paikka.y*this.leveys+paikka.x).havaittu = true;
+    }
+    public void poistaOtusRuudusta(Paikka paikka) {
+        this.ruudut.get(paikka.y*this.leveys+paikka.x).otus = null;
+    } 
     public void tulosta(){
         for (int k = 0; k < this.korkeus; k++){
             String rivi = new String();

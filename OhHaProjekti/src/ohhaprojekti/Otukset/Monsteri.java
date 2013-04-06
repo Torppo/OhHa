@@ -8,6 +8,7 @@ import ohhaprojekti.Otukset.Otus;
 import java.util.Random;
 import ohhaprojekti.Toiminta.Hyokkays;
 import ohhaprojekti.Toiminta.Paikka;
+import ohhaprojekti.Toiminta.Pelilauta;
 
 /**
  *
@@ -21,15 +22,11 @@ public class Monsteri extends Otus{
     private Paikka paikka;
     
     public Monsteri(int taito, int voima, int kunto,int puolustus, Paikka paikka) {
-        this.kunto = kunto;
-        this.paikka = paikka;
-        this.taito = taito;
-        this.voima = voima;
-        this.puolustus = puolustus;
+        super(taito, voima, kunto, puolustus, paikka);
     }
 
     @Override
-    public boolean liiku(int x, int y) {
+    public boolean liiku(int x, int y, Pelilauta lauta) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -69,5 +66,9 @@ public class Monsteri extends Otus{
     @Override
     public Paikka palautaPaikka() {
         return this.paikka;
+    }
+    @Override
+    public void muutaPaikkaa(Paikka paikka) {
+        this.paikka = paikka;
     }
 }

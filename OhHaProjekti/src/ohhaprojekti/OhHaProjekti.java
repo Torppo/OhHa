@@ -4,6 +4,10 @@
  */
 package ohhaprojekti;
 
+import javax.swing.SwingUtilities;
+import ohhaprojekti.Otukset.Pelaaja;
+import ohhaprojekti.Toiminta.Kayttoliittyma;
+import ohhaprojekti.Toiminta.Paikka;
 import ohhaprojekti.Toiminta.Pelilauta;
 
 /**
@@ -17,9 +21,10 @@ public class OhHaProjekti {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Pelilauta lauta = new Pelilauta(10,10);
-        lauta.tuubaa();
-        lauta.tulosta();
-        System.out.println(lauta.palautaRuutu(9, 5));
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(new Pelaaja("Sankari", 1, 2, 10, 12, new Paikka(1,1)));
+        SwingUtilities.invokeLater(kayttoliittyma);
+        
+        
+        
     }
 }

@@ -7,6 +7,7 @@ package ohhaprojekti.Otukset;
 import java.util.Random;
 import ohhaprojekti.Toiminta.Hyokkays;
 import ohhaprojekti.Toiminta.Paikka;
+import ohhaprojekti.Toiminta.Pelilauta;
 
 /**
  *
@@ -19,7 +20,15 @@ public abstract class Otus {
     private int puolustus = 0;
     private Paikka paikka;
     
-    public abstract boolean liiku(int x, int y);
+    public Otus(int taito, int voima, int kunto,int puolustus, Paikka paikka) {
+        this.kunto = kunto;
+        this.paikka = paikka;
+        this.taito = taito;
+        this.voima = voima;
+        this.puolustus = puolustus;
+    }
+    
+    public abstract boolean liiku(int x, int y, Pelilauta lauta);
     
     public Hyokkays hyokkaa() {
         Random noppa = new Random();
@@ -50,5 +59,8 @@ public abstract class Otus {
     }
     public Paikka palautaPaikka() {
         return this.paikka;
+    }
+    public void muutaPaikkaa(Paikka paikka) {
+        this.paikka = paikka;
     }
 }
