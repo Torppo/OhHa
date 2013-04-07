@@ -27,12 +27,7 @@ public class Pelaaja extends Otus {
     }
     @Override
     public boolean liiku(int x, int y, Pelilauta lauta) {
-        if(this.paikka.x + x < 0 || this.paikka.x + x >= lauta.palautaLeveys() || this.paikka.y + y < 0 || this.paikka.y >= lauta.palautaKorkeus()) {
-            return false;
-        }
-        this.paikka.x += x;
-        this.paikka.y += y;
-        return true;
+        return lauta.lisaaOtusRuutuun(new Paikka(this.paikka.x+x, this.paikka.y+y), this);
     }
     @Override
     public Hyokkays hyokkaa() {

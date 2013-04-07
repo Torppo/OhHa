@@ -4,7 +4,6 @@
  */
 package ohhaprojekti.Toiminta;
 
-import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import ohhaprojekti.Otukset.Otus;
@@ -40,6 +39,7 @@ public class NappaimistonKuuntelija implements KeyListener{
          else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
             otus.liiku(1, 0, this.lauta);
         }
+//        lauta.repaint() REPAINT TÄSSÄ!;
     }
 
     @Override

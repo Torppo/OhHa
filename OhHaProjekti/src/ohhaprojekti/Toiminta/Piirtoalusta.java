@@ -10,10 +10,14 @@ import javax.swing.JPanel;
  *
  * @author pii
  */
-public class Piirtoalusta extends JPanel {
+public class Piirtoalusta extends JPanel{
     private Pelilauta lauta;
     
     public Piirtoalusta(Pelilauta lauta) {
         this.lauta = lauta;
+    }
+   
+    protected void paintComponent() {
+        
     }
 }

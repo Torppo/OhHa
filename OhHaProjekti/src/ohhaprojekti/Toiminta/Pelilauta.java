@@ -62,10 +62,20 @@ public class Pelilauta {
         }
         return jonot;
     }
-    public void lisaaOtusRuutuun(Paikka paikka, Otus otus) {
+    public boolean lisaaOtusRuutuun(Paikka paikka, Otus otus) {
+         if(this.ruudut.get(paikka.x*leveys+paikka.y).seina == true) {
+            return false;
+         }
+         if(this.ruudut.get(paikka.x*leveys+paikka.y).otus != null) {
+             otus.hyokkaa();
+         }
+         if(!this.ruudut.get(paikka.x*leveys+paikka.y).esineet.isEmpty()) {
+             return false;
+         }
         this.ruudut.get(paikka.y*this.leveys+paikka.x).otus = otus;
         otus.muutaPaikkaa(paikka);
         this.ruudut.get(paikka.y*this.leveys+paikka.x).havaittu = true;
+        return true;
     }
     public void poistaOtusRuudusta(Paikka paikka) {
         this.ruudut.get(paikka.y*this.leveys+paikka.x).otus = null;

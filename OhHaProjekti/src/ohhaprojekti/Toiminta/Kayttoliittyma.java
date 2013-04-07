@@ -40,8 +40,8 @@ public class Kayttoliittyma implements Runnable {
         this.kehys.addKeyListener(new NappaimistonKuuntelija(this.otus, this.lauta));
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);
-//        this.lauta.tuubaa();
-        this.lauta.lisaaOtusRuutuun(new Paikka(0, 0), otus);
+        Piirtoalusta piirtoalusta = new Piirtoalusta(this.lauta);
+        container.add(piirtoalusta);
         ArrayList<String> jonot = this.lauta.palautaMerkkijonot();
         for (int i = 0; i < jonot.size(); i++) {
             JLabel piirto = new JLabel(jonot.get(i));
