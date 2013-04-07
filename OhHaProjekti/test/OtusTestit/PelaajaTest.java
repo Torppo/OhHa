@@ -8,6 +8,7 @@ package OtusTestit;
 import ohhaprojekti.Toiminta.Hyokkays;
 import ohhaprojekti.Toiminta.Paikka;
 import ohhaprojekti.Otukset.Pelaaja;
+import ohhaprojekti.Toiminta.Pelilauta;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -21,6 +22,7 @@ import static org.junit.Assert.*;
  */
 public class PelaajaTest {
     Pelaaja pelaaja;
+    Pelilauta lauta;
     
     public PelaajaTest() {
     }
@@ -35,7 +37,8 @@ public class PelaajaTest {
     
     @Before
     public void setUp() {
-        pelaaja = new Pelaaja("Sankari", 1, 2, 10, 12, new Paikka(1,3));
+        this.pelaaja = new Pelaaja("Sankari", 1, 2, 10, 12, new Paikka(1,3));
+        this.lauta = new Pelilauta(10,10);
     }
     
     @After
@@ -52,24 +55,24 @@ public class PelaajaTest {
     }
     @Test
     public void konstruktoriAsettaaTaidonOikein() {
-        assertEquals(1, pelaaja.palautaTaito());
+        assertEquals(1, pelaaja.taito);
     }
     @Test
     public void konstruktoriAsettaaKunnonOikein() {
-        assertEquals(10, pelaaja.palautaKunto());
+        assertEquals(10, pelaaja.kunto);
     }
     @Test
     public void konstruktoriAsettssVoimanOikein() {
-        assertEquals(2, pelaaja.palautaVoima());
+        assertEquals(2, pelaaja.voima);
     }
     @Test
     public void konstruktoriAsettaaPuolustuksenOikein() {
-        assertEquals(12, pelaaja.palautaPuolustus());
+        assertEquals(12, pelaaja.puolustus);
     }
     @Test
     public void konstruktoriAsettaaPaikanOikein() {
-        assertEquals(1, pelaaja.palautaPaikka().x);
-        assertEquals(3, pelaaja.palautaPaikka().y);
+        assertEquals(1, pelaaja.paikka.x);
+        assertEquals(3, pelaaja.paikka.y);
     }
     @Test
     public void hyokkaaAsettaaOsumanHyokkaykseen() {
@@ -80,5 +83,11 @@ public class PelaajaTest {
     public void hyokkaaAsettaaVahingonHyokkaykseen() {
         Hyokkays hyokkays = pelaaja.hyokkaa();
         assert(hyokkays.vahinkoSumma > 2 && hyokkays.vahinkoSumma < 9);
+    }
+    @Test
+    public void liikuAsettaaPaikanOikein() {
+        this.pelaaja.liiku(0, 1, this.lauta);
+        assertEquals(this.pelaaja.paikka.x, 1);
+        assertEquals(this.pelaaja.paikka.y, 4);
     }
 }

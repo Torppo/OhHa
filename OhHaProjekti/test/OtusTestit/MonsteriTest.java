@@ -51,19 +51,19 @@ public class MonsteriTest {
     }
     @Test
     public void konstruktoriAsettaaKunnonOikein() {
-        assertEquals(9, monsteri.palautaKunto());
+        assertEquals(9, monsteri.kunto);
     }
     @Test
     public void konstruktoriAsettssVoimanOikein() {
-        assertEquals(1, monsteri.palautaVoima());
+        assertEquals(1, monsteri.voima);
     }
     @Test
     public void konstruktoriAsettaaPuolustuksenOikein() {
-        assertEquals(11, monsteri.palautaPuolustus());
+        assertEquals(11, monsteri.puolustus);
     }
     @Test
     public void konstruktoriAsettaaPaikanOikein() {
-        assertEquals(2, monsteri.palautaPaikka().x);
-        assertEquals(4, monsteri.palautaPaikka().y);
+        assertEquals(2, monsteri.paikka.x);
+        assertEquals(4, monsteri.paikka.y);
     }
 }

@@ -65,6 +65,17 @@ public class PelilautaTest {
     }
     @Test
     public void lisaaOtusRuutuunKunRuutuOnTyhja() {
-        assertEquals(true, this.lauta.lisaaOtusRuutuun(paikka, this.otus));
+        assertEquals(true, this.lauta.lisaaOtusRuutuun(paikka, otus));
+    }
+    @Test
+    public void eiLisaaOtustaRuutuunKunRuudussaOnSeina() {
+        this.lauta.palautaRuutu(this.paikka.x, this.paikka.y).seina = true;
+        assertEquals(false, this.lauta.lisaaOtusRuutuun(paikka, otus));
+    }
+    @Test
+    public void PoistaaOtuksenRuudusta() {
+        this.lauta.lisaaOtusRuutuun(paikka, otus);
+        this.lauta.poistaOtusRuudusta(paikka);
+        assertEquals(null, this.lauta.palautaRuutu(paikka.x, paikka.y).otus);
     }
 }

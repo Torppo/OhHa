@@ -63,18 +63,17 @@ public class Pelilauta {
         return jonot;
     }
     public boolean lisaaOtusRuutuun(Paikka paikka, Otus otus) {
-         if(this.ruudut.get(paikka.x*leveys+paikka.y).seina == true) {
+         if(this.ruudut.get(paikka.y*leveys+paikka.x).seina == true) {
             return false;
          }
-         if(this.ruudut.get(paikka.x*leveys+paikka.y).otus != null) {
+         if(this.ruudut.get(paikka.y*leveys+paikka.x).otus != null) {
              otus.hyokkaa();
          }
-         if(!this.ruudut.get(paikka.x*leveys+paikka.y).esineet.isEmpty()) {
+         if(!this.ruudut.get(paikka.y*leveys+paikka.x).esineet.isEmpty()) {
              return false;
          }
         this.ruudut.get(paikka.y*this.leveys+paikka.x).otus = otus;
         otus.muutaPaikkaa(paikka);
-        this.ruudut.get(paikka.y*this.leveys+paikka.x).havaittu = true;
         return true;
     }
     public void poistaOtusRuudusta(Paikka paikka) {
