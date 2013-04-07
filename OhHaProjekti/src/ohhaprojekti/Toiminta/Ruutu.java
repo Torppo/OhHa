@@ -31,7 +31,7 @@ public class Ruutu {
         if (this.otus != null) merkki = "X";
         if (this.seina) merkki = "#";
         if (!this.esineet.isEmpty()) merkki = "%";
-        if (!this.havaittu) merkki = " ";
+//        if (!this.havaittu) merkki = " ";
         
         return merkki;
     }

@@ -6,12 +6,11 @@ package ohhaprojekti.Toiminta;
 
 import java.awt.Container;
 import java.awt.Dimension;
-import java.util.ArrayList;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 import ohhaprojekti.Otukset.Otus;
+import ohhaprojekti.Otukset.Pelaaja;
 
 /**
  *
@@ -20,34 +19,32 @@ import ohhaprojekti.Otukset.Otus;
 public class Kayttoliittyma implements Runnable {
     private JFrame kehys;
     private Pelilauta lauta;
-    private Otus otus;
+    private Pelaaja sankari;
     
-    public Kayttoliittyma(Otus otus) {
+    public Kayttoliittyma(Pelaaja pelaaja) {
         this.lauta = new Pelilauta(20, 20);
-        this.otus = otus;
+        this.sankari = pelaaja;
+        this.lauta.lisaaOtusRuutuun(sankari.paikka, sankari);
     }
     
     @Override
     public void run() {
         this.kehys = new JFrame("Pako!");
-        this.kehys.setPreferredSize(new Dimension(800, 800));
+        this.kehys.setPreferredSize(new Dimension(400, 400));
         this.kehys.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(this.kehys.getContentPane());
         this.kehys.pack();
         this.kehys.setVisible(true);
     }
+    
     private void luoKomponentit(Container container) {
-        this.kehys.addKeyListener(new NappaimistonKuuntelija(this.otus, this.lauta));
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);
         Piirtoalusta piirtoalusta = new Piirtoalusta(this.lauta);
         container.add(piirtoalusta);
-        ArrayList<String> jonot = this.lauta.palautaMerkkijonot();
-        for (int i = 0; i < jonot.size(); i++) {
-            JLabel piirto = new JLabel(jonot.get(i));
-            container.add(piirto); 
-        }
+        this.kehys.addKeyListener(new NappaimistonKuuntelija(this.sankari, this.lauta, piirtoalusta));
     }
+
     public JFrame getFrame() {
         return this.kehys;
     }
