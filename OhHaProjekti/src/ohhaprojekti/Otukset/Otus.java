@@ -14,11 +14,11 @@ import ohhaprojekti.Toiminta.Pelilauta;
  * @author pii
  */
 public abstract class Otus {
-    private int taito = 0;
-    private int voima = 0;
-    private int kunto = 0;
-    private int puolustus = 0;
-    private Paikka paikka;
+    public int taito = 0;
+    public int voima = 0;
+    public int kunto = 0;
+    public int puolustus = 0;
+    public Paikka paikka;
     
     public Otus(int taito, int voima, int kunto,int puolustus, Paikka paikka) {
         this.kunto = kunto;

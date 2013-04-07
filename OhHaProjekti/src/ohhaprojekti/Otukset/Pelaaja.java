@@ -15,11 +15,6 @@ import ohhaprojekti.Toiminta.Pelilauta;
  */
 public class Pelaaja extends Otus {
     private String nimi;
-    private int taito = 0;
-    private int voima = 0;
-    private int kunto = 0;
-    private int puolustus = 0;
-    private Paikka paikka;
     
      public Pelaaja(String nimi, int taito, int voima, int kunto, int puolustus, Paikka paikka) {
         super(taito, voima, kunto, puolustus, paikka);
@@ -27,13 +22,13 @@ public class Pelaaja extends Otus {
     }
     @Override
     public boolean liiku(int x, int y, Pelilauta lauta) {
-        return lauta.lisaaOtusRuutuun(new Paikka(this.paikka.x+x, this.paikka.y+y), this);
+        return lauta.lisaaOtusRuutuun(new Paikka(super.paikka.x+x, super.paikka.y+y), this);
     }
     @Override
     public Hyokkays hyokkaa() {
         Random noppa = new Random();
-        int osuma = (noppa.nextInt(20) + 1) + this.taito;
-        int vahinko = (noppa.nextInt(6) + 1) + this.voima;
+        int osuma = (noppa.nextInt(20) + 1) + super.taito;
+        int vahinko = (noppa.nextInt(6) + 1) + super.voima;
         return new Hyokkays(osuma, vahinko);
     }
     @Override
@@ -50,8 +45,8 @@ public class Pelaaja extends Otus {
     }
     @Override
     public void puolusta(Hyokkays hyokkays) {
-        if(hyokkays.osumaSumma > this.puolustus) {
-            this.kunto = this.kunto - hyokkays.vahinkoSumma;
+        if(hyokkays.osumaSumma > super.puolustus) {
+            super.kunto = super.kunto - hyokkays.vahinkoSumma;
         }
     }
     public String palautaNimi() {

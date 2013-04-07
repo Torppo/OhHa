@@ -4,7 +4,11 @@
  */
 package ToimintaTestit;
 
+import ohhaprojekti.Otukset.Otus;
+import ohhaprojekti.Otukset.Pelaaja;
+import ohhaprojekti.Toiminta.Paikka;
 import ohhaprojekti.Toiminta.Pelilauta;
+import ohhaprojekti.Toiminta.Ruutu;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,6 +22,8 @@ import static org.junit.Assert.*;
  */
 public class PelilautaTest {
     private Pelilauta lauta;
+    private Otus otus;
+    private Paikka paikka;
     
     public PelilautaTest() {
     }
@@ -33,6 +39,8 @@ public class PelilautaTest {
     @Before
     public void setUp() {
         this.lauta = new Pelilauta(10, 12);
+        this.otus = new Pelaaja("Sankari", 1, 2, 10, 12, new Paikka(1,1));
+        this.paikka = new Paikka(1, 2);
     }
     
     @After
@@ -54,5 +62,9 @@ public class PelilautaTest {
     @Test
     public void konstruktoriLuoRuutujaOikeanMaaran() {
         assertEquals(10*12, this.lauta.palautaRuutuLista().size());
+    }
+    @Test
+    public void lisaaOtusRuutuunKunRuutuOnTyhja() {
+        assertEquals(true, this.lauta.lisaaOtusRuutuun(paikka, this.otus));
     }
 }

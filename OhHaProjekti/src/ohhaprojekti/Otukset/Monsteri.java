@@ -15,11 +15,6 @@ import ohhaprojekti.Toiminta.Pelilauta;
  * @author pii
  */
 public class Monsteri extends Otus{
-    private int taito = 0;
-    private int voima = 0;
-    private int kunto = 0;
-    private int puolustus = 0;
-    private Paikka paikka;
     
     public Monsteri(int taito, int voima, int kunto,int puolustus, Paikka paikka) {
         super(taito, voima, kunto, puolustus, paikka);
@@ -33,8 +28,8 @@ public class Monsteri extends Otus{
     @Override
     public Hyokkays hyokkaa() {
         Random noppa = new Random();
-        int osuma = (noppa.nextInt(20) + 1) + this.taito;
-        int vahinko = (noppa.nextInt(6) + 1) + this.voima;
+        int osuma = (noppa.nextInt(20) + 1) + super.taito;
+        int vahinko = (noppa.nextInt(6) + 1) + super.voima;
         return new Hyokkays(osuma, vahinko);
     }
     @Override
@@ -51,8 +46,8 @@ public class Monsteri extends Otus{
     }
     @Override
     public void puolusta(Hyokkays hyokkays) {
-        if(hyokkays.osumaSumma > this.puolustus) {
-            this.kunto = this.kunto - hyokkays.vahinkoSumma;
+        if(hyokkays.osumaSumma > super.puolustus) {
+            super.kunto = super.kunto - hyokkays.vahinkoSumma;
         }
     }
     @Override

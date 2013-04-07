@@ -47,7 +47,7 @@ public class MonsteriTest {
     // public void hello() {}
     @Test
     public void konstruktoriAsettaaTaidonOikein() {
-        assertEquals(2, monsteri.palautaTaito());
+        assertEquals(2, monsteri.taito);
     }
     @Test
     public void konstruktoriAsettaaKunnonOikein() {
