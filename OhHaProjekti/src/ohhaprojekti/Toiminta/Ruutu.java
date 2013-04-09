@@ -27,7 +27,7 @@ public class Ruutu {
    
     @Override
     public String toString(){
-        String merkki = new String(".");
+        String merkki = (".");
         if (this.otus != null) merkki = "X";
         if (this.seina) merkki = "#";
         if (!this.esineet.isEmpty()) merkki = "%";

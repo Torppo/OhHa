@@ -74,6 +74,7 @@ public class Pelilauta {
          }
         this.ruudut.get(paikka.y*leveys+paikka.x).otus = otus;
         otus.muutaPaikkaa(paikka);
+        System.out.println(otus.palautaPaikka().x + ", " + otus.paikka.y);
         return true;
     }
     public void poistaOtusRuudusta(Paikka paikka) {

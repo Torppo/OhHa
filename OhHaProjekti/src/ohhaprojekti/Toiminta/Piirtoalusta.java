@@ -7,6 +7,7 @@ package ohhaprojekti.Toiminta;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -17,30 +18,30 @@ import javax.swing.JPanel;
  */
 public class Piirtoalusta extends JPanel{
     private Pelilauta lauta;
+    private JLabel[][] merkit;
     
     public Piirtoalusta(Pelilauta lauta_) {
         this.lauta = lauta_;
-    }
-
-    @Override
-    protected void paintComponent(Graphics graphics) {
-        ArrayList<String> jonot = this.lauta.palautaMerkkijonot();
-        for (int i = 0; i < jonot.size(); i++) {
-            JLabel piirto = new JLabel(jonot.get(i));
-            super.add(piirto);
-        }
-    }
-    
- /*   @Override
-    public void repaint() {
-        if(lauta != null) { 
-            ArrayList<String> jonot = this.lauta.palautaMerkkijonot();
-            for (int i = 0; i < jonot.size(); i++) {
-                JLabel piirto = new JLabel(jonot.get(i));
-                super.add(piirto);
+        this.merkit = new JLabel[this.lauta.palautaKorkeus()][this.lauta.palautaLeveys()];
+        GridLayout experimentLayout = new GridLayout(0,this.lauta.palautaLeveys());
+        this.setLayout(experimentLayout);
+        
+        for (int i = 0; i < this.merkit.length; i++) {
+            for (int j = 0; j < this.merkit[0].length; j++) {
+                this.merkit[i][j] = new JLabel(this.lauta.palautaRuutuLista().get(i*this.lauta.palautaLeveys()+j).toString());
+                this.add(this.merkit[i][j]);
             }
         }
-    }*/
+    }
+    public void paivita() {
+         for (int i = 0; i < this.merkit.length; i++) {
+            for (int j = 0; j < this.merkit[0].length; j++) {
+                this.merkit[i][j].setText(this.lauta.palautaRuutuLista().get(i*this.lauta.palautaLeveys()+j).toString());
+            }
+        }
+    }
+
+   
     
    
     

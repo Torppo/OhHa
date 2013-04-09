@@ -40,10 +40,7 @@ public class Monsteri extends Otus{
     public void muutaKuntoa(int muutos) {
         this.kunto = this.kunto + muutos;
     }
-    @Override
-    public int palautaKunto() {
-        return this.kunto;
-    }
+    
     @Override
     public void puolusta(Hyokkays hyokkays) {
         if(hyokkays.osumaSumma > super.puolustus) {

@@ -17,12 +17,12 @@ import ohhaprojekti.Otukset.Pelaaja;
 public class NappaimistonKuuntelija implements KeyListener{
     private Pelaaja sankari;
     private Pelilauta lauta;
-    private Component komponentti;
+    private Piirtoalusta alusta;
     
-    public NappaimistonKuuntelija(Pelaaja pelaaja, Pelilauta lauta, Component komponentti) {
+    public NappaimistonKuuntelija(Pelaaja pelaaja, Pelilauta lauta, Piirtoalusta alusta) {
         this.sankari = pelaaja;
         this.lauta = lauta;
-        this.komponentti = komponentti;
+        this.alusta = alusta;
     }
 
     @Override
@@ -33,6 +33,7 @@ public class NappaimistonKuuntelija implements KeyListener{
     public void keyPressed(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_UP) {
             sankari.liiku(0, -1, this.lauta);
+            System.out.println("moi");
         }
         else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
             sankari.liiku(0, 1, this.lauta);
@@ -43,7 +44,8 @@ public class NappaimistonKuuntelija implements KeyListener{
          else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
             sankari.liiku(1, 0, this.lauta);
         }
-        komponentti.repaint();
+        this.alusta.paivita();
+        this.alusta.repaint();
     }
 
     @Override
