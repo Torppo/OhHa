@@ -33,6 +33,9 @@ public class Piirtoalusta extends JPanel{
             }
         }
     }
+    /**
+     * Metodi hakee Pelilaudalta tiedot ruutujen sisällöstä ja asettaa ne taulukkoon merkit JLabel -olioiden sisään.
+     */
     public void paivita() {
          for (int i = 0; i < this.merkit.length; i++) {
             for (int j = 0; j < this.merkit[0].length; j++) {

@@ -24,7 +24,10 @@ public class Ruutu {
         this.otus = null;
         this.esineet = new ArrayList<Esine>();        
     }
-   
+    /**
+     * Palauttaa ruudussa olevaa asiaa ilmaisevan merkin.
+     * @return String -merkin.
+     */
     @Override
     public String toString(){
         String merkki = (".");

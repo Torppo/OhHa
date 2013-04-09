@@ -62,12 +62,20 @@ public class Pelilauta {
         }
         return jonot;
     }
+    /**
+     * LisaaOtusRuutuun -metodi selvittää onko Pelilaudan ruudussa, jonka paikan se saa parametrina, tyhjä.
+     * Jos Ruutu on tyhjä se poistaa parametrinaan saamansa otuksen sen lähtöruudusta ja asettaa sen tähän uuteen tyhjään ruutuun.
+     * Tämän jälkeen se muuttaa saamansa otuksen paikan koordinaatit uuden ruudun koordinaateiksi.
+     * Jos ruudussa olikin seinä otus pysyy paikallaan. Jos siinä oli toinen otus sen kimppuun hyökätään. Jos siinä on esineitä ne kerätään.
+     * @param paikka on uuden ruudun paikkaa ilmaiseva olio.
+     * @param otus on otus, jota on siirettävä.
+     * @return true, jos siirto onnistui ja false, jos ei onnistunut. 
+     */
     public boolean lisaaOtusRuutuun(Paikka paikka, Otus otus) {
          if(this.ruudut.get(paikka.y*leveys+paikka.x).seina == true) {
             return false;
          }
          if(this.ruudut.get(paikka.y*leveys+paikka.x).otus != null) {
-             otus.hyokkaa();
          }
          if(!this.ruudut.get(paikka.y*leveys+paikka.x).esineet.isEmpty()) {
              return false;
@@ -78,6 +86,10 @@ public class Pelilauta {
         System.out.println(otus.palautaPaikka().x + ", " + otus.paikka.y);
         return true;
     }
+    /**
+     * Metodi asettaa ruudun otuksen nulliksi, jonka paikan se saa parametrina.
+     * @param paikka ilmaisee ruudun paikan Pelilaudalla.
+     */
     public void poistaOtusRuudusta(Paikka paikka) {
         this.ruudut.get(paikka.y*this.leveys+paikka.x).otus = null;
     } 

@@ -29,14 +29,21 @@ public abstract class Otus {
     }
     
     public abstract boolean liiku(int x, int y, Pelilauta lauta);
-    
+    /**
+     * Metodi luo Dungeons & Dragons 3.5 painoksen sääntöjen mukaan hyokkayksen. 
+     * @return palauttaa metodin luoman hyokkayksen. 
+     */
     public Hyokkays hyokkaa() {
         Random noppa = new Random();
         int osuma = (noppa.nextInt(20) + 1) + this.taito;
         int vahinko = (noppa.nextInt(6) + 1) + this.voima;
         return new Hyokkays(osuma, vahinko);
     }
-    
+    /**
+     * Metodi saa Hyokkayksen, jonka parametrejä käyttäen se tarkistaa Dungeons & Dragons 3.5 painoksen sääntöjen mukaisesti,
+     * onnistuuko hyökkäys. Jos hyökkäys onnistui metodi laskee sen tuottaman vahingon.
+     * @param hyokkays on Hyokkays jota vastaan puolustaudutaan. 
+     */
     public void puolusta(Hyokkays hyokkays) {
         if(hyokkays.osumaSumma > this.puolustus) {
             this.kunto = this.kunto - hyokkays.vahinkoSumma;

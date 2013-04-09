@@ -21,11 +21,12 @@ public class Pelaaja extends Otus {
         this.nimi = nimi;
     }
      /**
-      * 
-      * @param x
-      * @param y
-      * @param lauta
-      * @return 
+      * Liiku -metodi kutsuu laudan lisaaOtusRuutuunMetodia. 
+      * Se antaa tälle metodille paikan, jossa on määränpääruudun koordinaatit ja liikutettavan olion.
+      * @param x Antaa x -koordinaatin pelilaudan koordinaatistoon.
+      * @param y Antaa y -koordinaatin pelilaudan koordinaatistoon.
+      * @param lauta Antaa Pelilaudan.
+      * @return true, jos liikkuminen onnistui, muuten false.
       */
     @Override
     public boolean liiku(int x, int y, Pelilauta lauta) {
