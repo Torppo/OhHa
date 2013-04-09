@@ -30,7 +30,6 @@ public class Pelaaja extends Otus {
     @Override
     public boolean liiku(int x, int y, Pelilauta lauta) {
         System.out.println(super.paikka.x + ", " + super.paikka.y);
-        lauta.poistaOtusRuudusta(super.paikka);
         return lauta.lisaaOtusRuutuun(new Paikka(super.paikka.x+x, super.paikka.y+y), this);
     }
     @Override
