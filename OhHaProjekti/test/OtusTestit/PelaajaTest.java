@@ -55,24 +55,24 @@ public class PelaajaTest {
     }
     @Test
     public void konstruktoriAsettaaTaidonOikein() {
-        assertEquals(1, pelaaja.taito);
+        assertEquals(1, pelaaja.palautaTaito());
     }
     @Test
     public void konstruktoriAsettaaKunnonOikein() {
-        assertEquals(10, pelaaja.kunto);
+        assertEquals(10, pelaaja.palautaKunto());
     }
     @Test
-    public void konstruktoriAsettssVoimanOikein() {
-        assertEquals(2, pelaaja.voima);
+    public void konstruktoriAsettaaVoimanOikein() {
+        assertEquals(2, pelaaja.palautaVoima());
     }
     @Test
     public void konstruktoriAsettaaPuolustuksenOikein() {
-        assertEquals(12, pelaaja.puolustus);
+        assertEquals(12, pelaaja.palautaPuolustus());
     }
     @Test
     public void konstruktoriAsettaaPaikanOikein() {
-        assertEquals(1, pelaaja.paikka.x);
-        assertEquals(3, pelaaja.paikka.y);
+        assertEquals(1, pelaaja.palautaPaikka().x);
+        assertEquals(3, pelaaja.palautaPaikka().y);
     }
     @Test
     public void hyokkaaAsettaaOsumanHyokkaykseen() {
@@ -87,7 +87,7 @@ public class PelaajaTest {
     @Test
     public void liikuAsettaaPaikanOikein() {
         this.pelaaja.liiku(0, 1, this.lauta);
-        assertEquals(this.pelaaja.paikka.x, 1);
-        assertEquals(this.pelaaja.paikka.y, 4);
+        assertEquals(this.pelaaja.palautaPaikka().x, 1);
+        assertEquals(this.pelaaja.palautaPaikka().y, 4);
     }
 }

@@ -24,7 +24,7 @@ public class Kayttoliittyma implements Runnable {
     public Kayttoliittyma(Pelaaja pelaaja) {
         this.lauta = new Pelilauta(20, 20);
         this.sankari = pelaaja;
-        this.lauta.lisaaOtusRuutuun(sankari.paikka, sankari);
+        this.lauta.lisaaOtusRuutuun(sankari.palautaPaikka(), sankari);
     }
     
     @Override

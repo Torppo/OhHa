@@ -47,23 +47,23 @@ public class MonsteriTest {
     // public void hello() {}
     @Test
     public void konstruktoriAsettaaTaidonOikein() {
-        assertEquals(2, monsteri.taito);
+        assertEquals(2, monsteri.palautaTaito());
     }
     @Test
     public void konstruktoriAsettaaKunnonOikein() {
-        assertEquals(9, monsteri.kunto);
+        assertEquals(9, monsteri.palautaKunto());
     }
     @Test
-    public void konstruktoriAsettssVoimanOikein() {
-        assertEquals(1, monsteri.voima);
+    public void konstruktoriAsettaaVoimanOikein() {
+        assertEquals(1, monsteri.palautaVoima());
     }
     @Test
     public void konstruktoriAsettaaPuolustuksenOikein() {
-        assertEquals(11, monsteri.puolustus);
+        assertEquals(11, monsteri.palautaPuolustus());
     }
     @Test
     public void konstruktoriAsettaaPaikanOikein() {
-        assertEquals(2, monsteri.paikka.x);
-        assertEquals(4, monsteri.paikka.y);
+        assertEquals(2, monsteri.palautaPaikka().x);
+        assertEquals(4, monsteri.palautaPaikka().y);
     }
 }

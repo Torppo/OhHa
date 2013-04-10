@@ -33,48 +33,8 @@ public class Pelaaja extends Otus {
         System.out.println(super.paikka.x + ", " + super.paikka.y);
         return lauta.lisaaOtusRuutuun(new Paikka(super.paikka.x+x, super.paikka.y+y), this);
     }
-    @Override
-    public Hyokkays hyokkaa() {
-        Random noppa = new Random();
-        int osuma = (noppa.nextInt(20) + 1) + super.taito;
-        int vahinko = (noppa.nextInt(6) + 1) + super.voima;
-        return new Hyokkays(osuma, vahinko);
-    }
-    @Override
-     public int palautaPuolustus() {
-        return this.puolustus;
-    }
-    @Override
-    public void muutaKuntoa(int muutos) {
-        this.kunto = this.kunto + muutos;
-    }
-    @Override
-    public int palautaKunto() {
-        return this.kunto;
-    }
-    @Override
-    public void puolusta(Hyokkays hyokkays) {
-        if(hyokkays.osumaSumma > super.puolustus) {
-            super.kunto = super.kunto - hyokkays.vahinkoSumma;
-        }
-    }
+
     public String palautaNimi() {
         return this.nimi;
-    }
-    @Override
-    public int palautaTaito() {
-        return this.taito;
-    }
-    @Override
-    public int palautaVoima() {
-        return this.voima;
-    }
-    @Override
-    public Paikka palautaPaikka() {
-        return this.paikka;
-    }
-    @Override
-    public void muutaPaikkaa(Paikka paikka) {
-        this.paikka = paikka;
     }
 }
