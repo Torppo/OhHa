@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohhaprojekti.Toiminta;
+package ohhaprojekti.Kayttoliittyma;
 
 
 import java.awt.Color;
@@ -11,6 +11,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import ohhaprojekti.Toiminta.Pelilauta;
 
 /**
  *
@@ -20,8 +21,8 @@ public class Piirtoalusta extends JPanel{
     private Pelilauta lauta;
     private JLabel[][] merkit;
     
-    public Piirtoalusta(Pelilauta lauta_) {
-        this.lauta = lauta_;
+    public Piirtoalusta(Pelilauta lauta) {
+        this.lauta = lauta;
         this.merkit = new JLabel[this.lauta.palautaKorkeus()][this.lauta.palautaLeveys()];
         GridLayout experimentLayout = new GridLayout(0,this.lauta.palautaLeveys());
         this.setLayout(experimentLayout);

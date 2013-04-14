@@ -20,7 +20,7 @@ public abstract class Otus {
     protected int puolustus = 0;
     protected Paikka paikka;
     
-    public Otus(int taito, int voima, int kunto,int puolustus, Paikka paikka) {
+    public Otus(int taito, int voima, int kunto, int puolustus, Paikka paikka) {
         this.kunto = kunto;
         this.paikka = paikka;
         this.taito = taito;
@@ -49,6 +49,12 @@ public abstract class Otus {
             this.kunto = this.kunto - hyokkays.vahinkoSumma;
         }
     }
+    public abstract String palautaMerkki();
+    
+    public abstract void muutaMerkkia(String uusiMerkki);
+    
+    public abstract void havaitse(Pelilauta lauta);
+    
     public int palautaPuolustus() {
         return this.puolustus;
     }

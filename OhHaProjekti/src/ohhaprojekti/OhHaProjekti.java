@@ -6,7 +6,7 @@ package ohhaprojekti;
 
 import javax.swing.SwingUtilities;
 import ohhaprojekti.Otukset.Pelaaja;
-import ohhaprojekti.Toiminta.Kayttoliittyma;
+import ohhaprojekti.Kayttoliittyma.Kayttoliittyma;
 import ohhaprojekti.Toiminta.Paikka;
 import ohhaprojekti.Toiminta.Pelilauta;
 
@@ -21,7 +21,7 @@ public class OhHaProjekti {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(new Pelaaja("Sankari", 1, 2, 10, 12, new Paikka(1,1)));
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(new Pelaaja("Sankari", 1, 2, 10, 12, new Paikka(10,10)));
         SwingUtilities.invokeLater(kayttoliittyma);
         
         

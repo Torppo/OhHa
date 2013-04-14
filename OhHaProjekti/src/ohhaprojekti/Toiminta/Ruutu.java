@@ -6,7 +6,9 @@ package ohhaprojekti.Toiminta;
 
 import ohhaprojekti.Otukset.Esine;
 import java.util.ArrayList;
+import ohhaprojekti.Otukset.Monsteri;
 import ohhaprojekti.Otukset.Otus;
+import ohhaprojekti.Otukset.Pelaaja;
 
 /**
  *
@@ -31,11 +33,18 @@ public class Ruutu {
     @Override
     public String toString(){
         String merkki = (".");
-        if (this.otus != null) merkki = "X";
-        if (this.seina) merkki = "#";
-        if (!this.esineet.isEmpty()) merkki = "%";
-//        if (!this.havaittu) merkki = " ";
-        
+        if (this.otus != null) {
+            merkki = this.otus.palautaMerkki();
+        }
+        if (this.seina) {
+            merkki = "#";
+        }
+        if (!this.esineet.isEmpty()) {
+            merkki = "%";
+        }
+        if (!this.havaittu) {
+            merkki = " ";
+        }
         return merkki;
     }
 }

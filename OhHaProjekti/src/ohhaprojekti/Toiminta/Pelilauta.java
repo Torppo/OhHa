@@ -72,10 +72,22 @@ public class Pelilauta {
      * @return true, jos siirto onnistui ja false, jos ei onnistunut. 
      */
     public boolean lisaaOtusRuutuun(Paikka paikka, Otus otus) {
-         if(this.ruudut.get(paikka.y*leveys+paikka.x).seina == true) {
+         if(paikka.x < 0 || paikka.x >= this.leveys || paikka.y < 0 || paikka.y >= this.korkeus || this.ruudut.get(paikka.y*leveys+paikka.x).seina == true) {
             return false;
          }
          if(this.ruudut.get(paikka.y*leveys+paikka.x).otus != null) {
+             while(true) {
+                 this.ruudut.get(paikka.y*leveys+paikka.x).otus.puolusta(otus.hyokkaa());
+                 otus.puolusta(this.ruudut.get(paikka.y*leveys+paikka.x).otus.hyokkaa());
+                 if(this.ruudut.get(paikka.y*leveys+paikka.x).otus.palautaKunto() < 1) {
+                     System.out.println(this.ruudut.get(paikka.y*leveys+paikka.x).otus.palautaKunto());
+                     break;
+                 }
+                 if(otus.palautaKunto() < 1) {
+                     otus.muutaMerkkia("K");
+                     return false;
+                 }
+             }
          }
          if(!this.ruudut.get(paikka.y*leveys+paikka.x).esineet.isEmpty()) {
              return false;
@@ -83,7 +95,6 @@ public class Pelilauta {
         poistaOtusRuudusta(otus.palautaPaikka());
         this.ruudut.get(paikka.y*leveys+paikka.x).otus = otus;
         otus.muutaPaikkaa(paikka);
-        System.out.println(otus.palautaPaikka().x + ", " + otus.palautaPaikka().y);
         return true;
     }
     /**
