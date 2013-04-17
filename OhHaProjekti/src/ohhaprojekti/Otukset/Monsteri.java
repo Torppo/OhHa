@@ -30,7 +30,10 @@ public class Monsteri extends Otus{
     public String palautaMerkki() {
         return this.merkki;
     }
-
+    /**
+     *  Muuttaa Monsteri -luokan merkkin arvon.
+     * @param uusiMerkki on uusi arvo.
+     */
     @Override
     public void muutaMerkkia(String uusiMerkki) {
         this.merkki = uusiMerkki;

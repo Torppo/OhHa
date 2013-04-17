@@ -58,6 +58,10 @@ public abstract class Otus {
     public int palautaPuolustus() {
         return this.puolustus;
     }
+    /**
+     * Muuttaa otuksen kunnon arvon.
+     * @param muutos on uusi arvo.
+     */
     public void muutaKuntoa(int muutos) {
         this.kunto = this.kunto + muutos;
     }
@@ -73,6 +77,10 @@ public abstract class Otus {
     public Paikka palautaPaikka() {
         return this.paikka;
     }
+    /**
+     * Muuttaa otuksen paikan.
+     * @param paikka on uusi paikka.
+     */
     public void muutaPaikkaa(Paikka paikka) {
         this.paikka = paikka;
     }
