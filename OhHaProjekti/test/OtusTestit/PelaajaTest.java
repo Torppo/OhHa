@@ -90,4 +90,14 @@ public class PelaajaTest {
         assertEquals(this.pelaaja.palautaPaikka().x, 1);
         assertEquals(this.pelaaja.palautaPaikka().y, 4);
     }
+    @Test
+    public void onkoHavaintoEtaisyydellaPalauttaTosi() {
+        Paikka paikka = new Paikka(2, 2);
+        assertEquals(this.pelaaja.onkoHavaintoEtaisyydella(paikka), true);
+    }
+    @Test
+    public void onkoHavaintoEtaisyydellaPalauttaEpatosi() {
+        Paikka paikka = new Paikka(2, 7);
+       assertEquals(this.pelaaja.onkoHavaintoEtaisyydella(paikka), false);
+    }
 }

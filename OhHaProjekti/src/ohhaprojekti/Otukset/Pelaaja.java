@@ -49,11 +49,19 @@ public class Pelaaja extends Otus {
     public String palautaMerkki() {
         return this.merkki;
     }
-
+    /**
+     * Muuttaa Pelaaja -luokan merkkin arvon.
+     * @param uusiMerkki on uusi arvo.
+     */
     @Override
     public void muutaMerkkia(String uusiMerkki) {
         this.merkki = uusiMerkki;
     }
+    /**
+     * Metodi saa paikan ja tarkistaa onko se pelaajan näköetäisyydellä phytagoraan lausetta apunaan käyttäen.
+     * @param paikka on testattava paikka.
+     * @return 
+     */
     public boolean onkoHavaintoEtaisyydella(Paikka paikka) {
         double etaisyys = Math.sqrt(Math.pow(paikka.x, 2) + Math.pow(paikka.y, 2));
         if(etaisyys <= this.havaintoEtaisyys) {
@@ -61,7 +69,13 @@ public class Pelaaja extends Otus {
         }
         return false;
     }
-
+    /**
+     * Metodi muodostaa alueen, jonka pelaaja havaitsee. 
+     * Se muodostaa ensiksi neliön, jonka sivut ovat kaksi kertaa havaintoEtaisyyden pituiset.
+     * Metodi laskee tämän neliön sisälle jääneiden ruutujen etäisyyden pelaajasta
+     * ja testaa onkoHavaintoEtaisyydella -metodin avulla ovatkoruudut havaintoetäisyydellä.
+     * @param lauta kuvaa Pelilautaa, joka annetaan, jotta ruutujen tiedot voidaan hakea.
+     */
     @Override
     public void havaitse(Pelilauta lauta) {
         int vasenReuna = Math.max(-this.havaintoEtaisyys, -super.paikka.x);
