@@ -104,6 +104,9 @@ public class Pelilauta {
     public void poistaOtusRuudusta(Paikka paikka) {
         this.ruudut.get(paikka.y*this.leveys+paikka.x).otus = null;
     } 
+    /**
+     * Tulostaa Pelilaudan ruudut koordinaatistossa.
+     */
     public void tulosta(){
         for (int k = 0; k < this.korkeus; k++){
             String rivi = new String();

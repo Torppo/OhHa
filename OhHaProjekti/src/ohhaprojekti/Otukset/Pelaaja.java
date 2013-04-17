@@ -74,6 +74,7 @@ public class Pelaaja extends Otus {
      * Se muodostaa ensiksi neliön, jonka sivut ovat kaksi kertaa havaintoEtaisyyden pituiset.
      * Metodi laskee tämän neliön sisälle jääneiden ruutujen etäisyyden pelaajasta
      * ja testaa onkoHavaintoEtaisyydella -metodin avulla ovatkoruudut havaintoetäisyydellä.
+     * Tähän pitäisi saada vielä seinien tarkistus ja rajaus.
      * @param lauta kuvaa Pelilautaa, joka annetaan, jotta ruutujen tiedot voidaan hakea.
      */
     @Override
