@@ -4,7 +4,6 @@
  */
 package ohhaprojekti.Toiminta;
 
-import ohhaprojekti.Otukset.Esine;
 import java.util.ArrayList;
 import ohhaprojekti.Otukset.Monsteri;
 import ohhaprojekti.Otukset.Otus;
@@ -18,13 +17,13 @@ public class Ruutu {
     public Boolean seina;
     public Boolean havaittu;
     public Otus otus;
-    public ArrayList<Esine> esineet;
+//    public ArrayList<Esine> esineet;
     
     public Ruutu(){
         this.seina = false;
         this.havaittu = false;
         this.otus = null;
-        this.esineet = new ArrayList<Esine>();        
+//        this.esineet = new ArrayList<Esine>();        
     }
     /**
      * Palauttaa ruudussa olevaa asiaa ilmaisevan merkin.
@@ -39,9 +38,9 @@ public class Ruutu {
         if (this.seina) {
             merkki = "#";
         }
-        if (!this.esineet.isEmpty()) {
-            merkki = "%";
-        }
+//        if (!this.esineet.isEmpty()) {
+//            merkki = "%";
+//        }
         if (!this.havaittu) {
             merkki = " ";
         }

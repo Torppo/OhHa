@@ -21,7 +21,7 @@ public class OhHaProjekti {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(new Pelaaja("Sankari", 1, 2, 10, 12, new Paikka(10,10)));
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(new Pelaaja("Sankari", 4, 6, 20, 16, new Paikka(10,10)));
         SwingUtilities.invokeLater(kayttoliittyma);
         
         

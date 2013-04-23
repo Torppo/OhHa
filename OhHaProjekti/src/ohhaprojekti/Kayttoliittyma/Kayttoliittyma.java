@@ -29,7 +29,6 @@ public class Kayttoliittyma implements Runnable {
         this.sankari = pelaaja;
         this.lauta.lisaaOtusRuutuun(sankari.palautaPaikka(), sankari);
         sankari.havaitse(lauta);
-        this.lauta.lisaaOtusRuutuun(new Paikka(2,2), new Monsteri(2, 1, 20, 9, new Paikka(2,2)));
     }
     
     @Override

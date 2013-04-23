@@ -7,9 +7,11 @@ package ohhaprojekti.Kayttoliittyma;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import ohhaprojekti.Otukset.Otus;
 import ohhaprojekti.Otukset.Pelaaja;
 import ohhaprojekti.Toiminta.Pelilauta;
+import ohhaprojekti.Toiminta.Ruutu;
 
 /**
  *
@@ -51,6 +53,10 @@ public class NappaimistonKuuntelija implements KeyListener{
             if(sankari.liiku(1, 0, this.lauta)) {
                 sankari.havaitse(lauta);
             }
+        }
+        ArrayList<Otus> monsteriLista = this.lauta.palautaListaLaudanMonstereista();
+        for (int i = 0; i < monsteriLista.size(); i++) {
+            monsteriLista.get(i).liiku(0, 0, this.lauta);
         }
         this.alusta.paivita();
         this.alusta.repaint();

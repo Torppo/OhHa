@@ -6,6 +6,7 @@ package ohhaprojekti.Toiminta;
 
 import java.util.ArrayList;
 import java.util.Random;
+import ohhaprojekti.Otukset.Monsteri;
 import ohhaprojekti.Otukset.Otus;
 
 /**
@@ -24,7 +25,33 @@ public class Pelilauta {
         for (int i = 0; i < leveys * korkeus; i++) {
             this.ruudut.add(new Ruutu());
         }
+        Random noppa = new Random();
+        int monsterit = noppa.nextInt(((this.leveys * this.korkeus) + 1)/(noppa.nextInt(10)+8));
+        int seinat = noppa.nextInt(((this.leveys * this.korkeus) + 1)/2);
         
+        for (int i = 0; i < monsterit; i++){
+            int k = noppa.nextInt(this.korkeus);
+            int l = noppa.nextInt(this.leveys);
+            this.ruudut.get(k * this.leveys + l).otus = new Monsteri(2, 1, 7, 9, new Paikka(k, this.leveys+l));
+        }
+         
+        for (int i = 0; i < seinat; i++){
+            int k = noppa.nextInt(this.korkeus);
+            int l = noppa.nextInt(this.leveys);
+            if(this.ruudut.get(k * this.leveys + l).otus == null) {
+                this.ruudut.get(k * this.leveys + l).seina = true;
+            }
+        }
+        
+    }
+    public ArrayList<Otus> palautaListaLaudanMonstereista() {
+        ArrayList<Otus> monsteriLista = new ArrayList<Otus>();
+        for (int i = 0; i < this.ruudut.size(); i++) {
+            if(this.ruudut.get(i).otus != null && this.ruudut.get(i).otus.palautaMerkki().equals("M")) {
+                monsteriLista.add(this.ruudut.get(i).otus);
+            }
+        }
+        return monsteriLista;
     }
     public int palautaLeveys() {
         return this.leveys;
@@ -79,8 +106,9 @@ public class Pelilauta {
              while(true) {
                  this.ruudut.get(paikka.y*leveys+paikka.x).otus.puolusta(otus.hyokkaa());
                  otus.puolusta(this.ruudut.get(paikka.y*leveys+paikka.x).otus.hyokkaa());
+                 
                  if(this.ruudut.get(paikka.y*leveys+paikka.x).otus.palautaKunto() < 1) {
-                     System.out.println(this.ruudut.get(paikka.y*leveys+paikka.x).otus.palautaKunto());
+//                     System.out.println(this.ruudut.get(paikka.y*leveys+paikka.x).otus.palautaKunto());
                      break;
                  }
                  if(otus.palautaKunto() < 1) {
@@ -89,9 +117,9 @@ public class Pelilauta {
                  }
              }
          }
-         if(!this.ruudut.get(paikka.y*leveys+paikka.x).esineet.isEmpty()) {
-             return false;
-         }
+//         if(!this.ruudut.get(paikka.y*leveys+paikka.x).esineet.isEmpty()) {
+//             return false;
+//         }
         poistaOtusRuudusta(otus.palautaPaikka());
         this.ruudut.get(paikka.y*leveys+paikka.x).otus = otus;
         otus.muutaPaikkaa(paikka);
@@ -102,7 +130,9 @@ public class Pelilauta {
      * @param paikka ilmaisee ruudun paikan Pelilaudalla.
      */
     public void poistaOtusRuudusta(Paikka paikka) {
-        this.ruudut.get(paikka.y*this.leveys+paikka.x).otus = null;
+        if(paikka.x > -1 && paikka.x < this.leveys && paikka.y > -1 && paikka.y < this.korkeus) {
+           this.ruudut.get(paikka.y*this.leveys+paikka.x).otus = null;
+         }
     } 
     /**
      * Tulostaa Pelilaudan ruudut koordinaatistossa.

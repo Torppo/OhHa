@@ -17,13 +17,12 @@ import ohhaprojekti.Toiminta.Ruutu;
  */
 public class Pelaaja extends Otus {
     private String nimi;
-    private String merkki;
     private int havaintoEtaisyys;
     
      public Pelaaja(String nimi, int taito, int voima, int kunto, int puolustus, Paikka paikka) {
         super(taito, voima, kunto, puolustus, paikka);
         this.nimi = nimi;
-        this.merkki = "X";
+        super.merkki = "X";
         this.havaintoEtaisyys = 6;
     }
      /**
@@ -45,18 +44,6 @@ public class Pelaaja extends Otus {
     public String palautaNimi() {
         return this.nimi;
     }
-    @Override
-    public String palautaMerkki() {
-        return this.merkki;
-    }
-    /**
-     * Muuttaa Pelaaja -luokan merkkin arvon.
-     * @param uusiMerkki on uusi arvo.
-     */
-    @Override
-    public void muutaMerkkia(String uusiMerkki) {
-        this.merkki = uusiMerkki;
-    }
     /**
      * Metodi saa paikan ja tarkistaa onko se pelaajan näköetäisyydellä phytagoraan lausetta apunaan käyttäen.
      * @param paikka on testattava paikka.
@@ -77,7 +64,6 @@ public class Pelaaja extends Otus {
      * Tähän pitäisi saada vielä seinien tarkistus ja rajaus.
      * @param lauta kuvaa Pelilautaa, joka annetaan, jotta ruutujen tiedot voidaan hakea.
      */
-    @Override
     public void havaitse(Pelilauta lauta) {
         int vasenReuna = Math.max(-this.havaintoEtaisyys, -super.paikka.x);
         int oikeaReuna = Math.min(this.havaintoEtaisyys, lauta.palautaLeveys()-super.paikka.x-1);

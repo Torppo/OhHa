@@ -15,32 +15,36 @@ import ohhaprojekti.Toiminta.Pelilauta;
  * @author pii
  */
 public class Monsteri extends Otus{
-    private String merkki;
+    private int laskuri;
     
     public Monsteri(int taito, int voima, int kunto,int puolustus, Paikka paikka) {
         super(taito, voima, kunto, puolustus, paikka);
-        this.merkki = "M";
+        super.merkki = "M";
+        this.laskuri = 0;
     }
-
     @Override
     public boolean liiku(int x, int y, Pelilauta lauta) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if(this.laskuri > -1 && this.laskuri < 3) {
+            this.laskuri++;
+            return lauta.lisaaOtusRuutuun(new Paikka(super.paikka.x+1, super.paikka.y), this);
+        }
+        if(this.laskuri > 2 && this.laskuri < 5) {
+            this.laskuri++;
+            return lauta.lisaaOtusRuutuun(new Paikka(super.paikka.x, super.paikka.y+1), this);
+        }
+        if(this.laskuri > 4 && this.laskuri < 8) {
+            this.laskuri++;
+            return lauta.lisaaOtusRuutuun(new Paikka(super.paikka.x-1, super.paikka.y), this);
+        }
+        else {
+            if(this.laskuri > 8) {
+                this.laskuri = 0;
+            }
+            else {
+                this.laskuri++;
+            }
+            return lauta.lisaaOtusRuutuun(new Paikka(super.paikka.x, super.paikka.y-1), this);
+        }
     }
-    @Override
-    public String palautaMerkki() {
-        return this.merkki;
-    }
-    /**
-     *  Muuttaa Monsteri -luokan merkkin arvon.
-     * @param uusiMerkki on uusi arvo.
-     */
-    @Override
-    public void muutaMerkkia(String uusiMerkki) {
-        this.merkki = uusiMerkki;
-    }
-
-    @Override
-    public void havaitse(Pelilauta lauta) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+   
 }

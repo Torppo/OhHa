@@ -18,6 +18,7 @@ public abstract class Otus {
     protected int voima = 0;
     protected int kunto = 0;
     protected int puolustus = 0;
+    protected String merkki;
     protected Paikka paikka;
     
     public Otus(int taito, int voima, int kunto, int puolustus, Paikka paikka) {
@@ -49,11 +50,16 @@ public abstract class Otus {
             this.kunto = this.kunto - hyokkays.vahinkoSumma;
         }
     }
-    public abstract String palautaMerkki();
-    
-    public abstract void muutaMerkkia(String uusiMerkki);
-    
-    public abstract void havaitse(Pelilauta lauta);
+    public String palautaMerkki() {
+        return this.merkki;
+    }
+     /**
+     *  Muuttaa Otus -luokan merkkin arvon.
+     * @param uusiMerkki on uusi arvo.
+     */
+    public void muutaMerkkia(String uusiMerkki) {
+        this.merkki = uusiMerkki;
+    }
     
     public int palautaPuolustus() {
         return this.puolustus;
