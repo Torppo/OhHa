@@ -1,0 +1,17 @@
+Ajankäyttö:
+
+Su 10.03.2013: 30 min: suunnittelua
+Ma 11.03.2013: 30 min: suunnittelua
+Ti 12.03.2013: 2 h: suunnittelua ja gitin käyttöönotto
+To 14.03.2013: 2 h: ohjelmointia
+La 16.03.2013: 4 h: ohjelmointia ja testausta
+Ti 19.03.2013: 1 h: luokkakaavio
+La 23.03.2013: 4 h: ohjelmointia ja luokkakaavion muokkausta
+La 06.04.2013: 4 h: ohjelmointia, testausta
+Su 07.04.2013: 3,5 h: ohjelmointia, testausta
+Ti 09.04.2013: 4,5 h: sekvenssikaaviot ja javaDoc
+Su 14.04.2013: 6 h: koodikatselmoint 1, ohjelmointia ja testausta
+Ti 16.04.2013: 30 min: JavaDoc ja yksi uusi sekvenssikaavio
+Ke 17.04.2013: 1 h: ohjelmointia
+Ti 23.04.2013: 4 h: ohjelmointia
+Ke 24.04.2013: ohjelmointia, testausta ja dokumentointia
