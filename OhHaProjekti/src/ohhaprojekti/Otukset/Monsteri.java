@@ -11,7 +11,8 @@ import ohhaprojekti.Toiminta.Paikka;
 import ohhaprojekti.Toiminta.Pelilauta;
 
 /**
- *
+ *Monsteri perii Otus -abstraktiluokan ja esittää pelaajan vastustajia.
+ *Sillä on Otuksen ominaisuuksien lisäksi laskuri, joka pitää kirjaa, onko se jo liikkunut kierroksensa.
  * @author pii
  */
 public class Monsteri extends Otus{

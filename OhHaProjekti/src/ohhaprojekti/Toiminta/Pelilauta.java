@@ -10,7 +10,8 @@ import ohhaprojekti.Otukset.Monsteri;
 import ohhaprojekti.Otukset.Otus;
 
 /**
- *
+ *Pelilauta on pelin tapahtumapaikka ja ympäristö. Siinä on koordinaatisto ruutuja, joilla otukset liikkuvat.
+ *Pelilauta pitää lukua ruuduistaan ja antaa tarvittavat metodit niiden muokkaamiseen.
  * @author pii
  */
 public class Pelilauta {

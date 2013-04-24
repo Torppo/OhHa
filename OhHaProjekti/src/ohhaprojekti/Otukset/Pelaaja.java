@@ -12,7 +12,10 @@ import ohhaprojekti.Toiminta.Pelilauta;
 import ohhaprojekti.Toiminta.Ruutu;
 
 /**
- *
+ *Pelaaja perii Otus -abstraktiluokan ja esittää pelaajan hahmoa. 
+ *Sillä on otuksen ominaisuuksien lisäksiu nimi ja etäisyys mihin asti se voi havaita. 
+ *Ja se määrittää ulkonäkönsä eli otuksen merkin.
+ *Otuksen kykyjen lisäksi sillä on havaintokyky.
  * @author pii
  */
 public class Pelaaja extends Otus {

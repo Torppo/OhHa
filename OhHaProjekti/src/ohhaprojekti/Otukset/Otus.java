@@ -10,7 +10,12 @@ import ohhaprojekti.Toiminta.Paikka;
 import ohhaprojekti.Toiminta.Pelilauta;
 
 /**
- *
+ *Otus on abstrakti luokka, joka esittää jotakin otusta jolla on erillaisia ominaisuuksia ja kykyjä. 
+ * Sen ominaisuuksista, taito kuvaa otuksen taitavuutta osua hyökätessään. Voima kuvaa kuinka paljon vahinkoa se tekee itsessään.
+ * Kunto kertoo onko otus vielä hengissä ja kuinka paljon vahinkoa se voi kärsiä ennen kuolemaa. 
+ * Puolustus kuvaa otuksen taitoa puolustautua.
+ * Merkki kertoo otuksen ulkonäön ja paikka missä otus sijaitsee pelilaudalla. 
+ * Otuksen kykyihin kuuluu, liikkuminen, hyökkääminen ja puolustaminen.
  * @author pii
  */
 public abstract class Otus {

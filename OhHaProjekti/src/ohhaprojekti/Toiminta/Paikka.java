@@ -5,7 +5,7 @@
 package ohhaprojekti.Toiminta;
 
 /**
- *
+ *Pikka kuvaa jotakin tiettyä ruudun paikkaa pelilaudalla.
  * @author pii
  */
 public class Paikka {

@@ -5,7 +5,9 @@
 package ohhaprojekti.Toiminta;
 
 /**
- *
+ *Hyokkays on hyökkäävän otuksen luoma hyökkäys, jota vastaan toisen otuksen on puolustauduttava.
+ * Hyökkäyksellä on osuma, jonka pitää ylittää puolustajan puolustus, 
+ * jotta se voi aiheuttaa vahinkonsa puolustautuvaan otukseen.
  * @author pii
  */
 public class Hyokkays {

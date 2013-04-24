@@ -10,7 +10,8 @@ import ohhaprojekti.Otukset.Otus;
 import ohhaprojekti.Otukset.Pelaaja;
 
 /**
- *
+ *Ruutu kuvaa pelilaudan ruutuja. 
+ * Ruudussa voi olla seinä tai otus ja se voi olla pelaajan vaitsema.
  * @author pii
  */
 public class Ruutu {
