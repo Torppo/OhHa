@@ -26,7 +26,7 @@ public class Pelilauta {
             this.ruudut.add(new Ruutu());
         }
         Random noppa = new Random();
-        int monsterit = noppa.nextInt(((this.leveys * this.korkeus) + 1)/(noppa.nextInt(10)+8));
+        int monsterit = noppa.nextInt(((this.leveys * this.korkeus) + 1)/10);
         int seinat = noppa.nextInt(((this.leveys * this.korkeus) + 1)/2);
         
         for (int i = 0; i < monsterit; i++){
@@ -44,6 +44,10 @@ public class Pelilauta {
         }
         
     }
+    /**
+     * Metodi kerää listaan kaikki pelilaudan monsterit ja palauttaa listan.
+     * @return lista monstereista
+     */
     public ArrayList<Otus> palautaListaLaudanMonstereista() {
         ArrayList<Otus> monsteriLista = new ArrayList<Otus>();
         for (int i = 0; i < this.ruudut.size(); i++) {
@@ -66,18 +70,6 @@ public class Pelilauta {
         return ruudut.get(y * this.leveys + x);
     }
     
-    public void tuubaa(){
-        Random noppa = new Random();
-        int maara = noppa.nextInt(((this.leveys * this.korkeus) + 1)/2);
-        
-        for (int i = 0; i < maara; i++){
-            int k = noppa.nextInt(this.korkeus);
-            int l = noppa.nextInt(this.leveys);
-            this.ruudut.get(k * this.leveys + l).havaittu = true;
-            this.ruudut.get(k * this.leveys + l).seina = true;
-        }
-        
-    }
     public ArrayList<String> palautaMerkkijonot() {
         ArrayList<String> jonot = new ArrayList<String>();
         for (int i = 0; i < this.korkeus; i++) {
@@ -93,7 +85,7 @@ public class Pelilauta {
      * LisaaOtusRuutuun -metodi selvittää onko Pelilaudan ruudussa, jonka paikan se saa parametrina, tyhjä.
      * Jos Ruutu on tyhjä se poistaa parametrinaan saamansa otuksen sen lähtöruudusta ja asettaa sen tähän uuteen tyhjään ruutuun.
      * Tämän jälkeen se muuttaa saamansa otuksen paikan koordinaatit uuden ruudun koordinaateiksi.
-     * Jos ruudussa olikin seinä otus pysyy paikallaan. Jos siinä oli toinen otus sen kimppuun hyökätään. Jos siinä on esineitä ne kerätään.
+     * Jos ruudussa olikin seinä otus pysyy paikallaan. Jos siinä oli toinen otus sen kimppuun hyökätään.
      * @param paikka on uuden ruudun paikkaa ilmaiseva olio.
      * @param otus on otus, jota on siirettävä.
      * @return true, jos siirto onnistui ja false, jos ei onnistunut. 
@@ -108,7 +100,6 @@ public class Pelilauta {
                  otus.puolusta(this.ruudut.get(paikka.y*leveys+paikka.x).otus.hyokkaa());
                  
                  if(this.ruudut.get(paikka.y*leveys+paikka.x).otus.palautaKunto() < 1) {
-//                     System.out.println(this.ruudut.get(paikka.y*leveys+paikka.x).otus.palautaKunto());
                      break;
                  }
                  if(otus.palautaKunto() < 1) {
@@ -117,13 +108,19 @@ public class Pelilauta {
                  }
              }
          }
-//         if(!this.ruudut.get(paikka.y*leveys+paikka.x).esineet.isEmpty()) {
-//             return false;
-//         }
         poistaOtusRuudusta(otus.palautaPaikka());
         this.ruudut.get(paikka.y*leveys+paikka.x).otus = otus;
         otus.muutaPaikkaa(paikka);
         return true;
+    }
+    /**
+     * Metodi poistaa kaikki otukset ja seinät pelilaudalta.
+     */
+    public void tyhjennaRuudut() {
+        for (int i = 0; i < this.ruudut.size(); i++) {
+           this.ruudut.get(i).otus = null;
+           this.ruudut.get(i).seina = false;
+        }
     }
     /**
      * Metodi asettaa ruudun otuksen nulliksi, jonka paikan se saa parametrina.

@@ -76,35 +76,5 @@ public class Pelaaja extends Otus {
                 }
             }
         }
-        
-        
-        
-//        boolean[] kayty = new boolean[lauta.palautaRuutuLista().size()];
-//        for (int i = 0; i < lauta.palautaRuutuLista().size(); i++) {
-//            kayty[i] = false;
-//        }
-//        ArrayDeque<HavaintoPaikka> jono = new ArrayDeque<HavaintoPaikka>();
-//        jono.add(new HavaintoPaikka(super.paikka.x, super.paikka.y, 0));
-//        lauta.palautaRuutu(super.paikka.x, super.paikka.y).havaittu = true;
-//        while(!jono.isEmpty()) {
-//            HavaintoPaikka hPaikka = jono.poll();
-//            kayty[hPaikka.y*lauta.palautaLeveys()+hPaikka.x] = true;
-//            if(hPaikka.y-1 > -1 && kayty[(hPaikka.y-1)*lauta.palautaLeveys()+hPaikka.x] == false && lauta.palautaRuutu(hPaikka.x, hPaikka.y-1).seina == false && hPaikka.kierros < this.havaintoEtaisyys) {
-//                lauta.palautaRuutu(hPaikka.x, hPaikka.y-1).havaittu = true;
-//                jono.add(new HavaintoPaikka(hPaikka.x, hPaikka.y-1, hPaikka.kierros+1));
-//            }
-//            if(hPaikka.y+1 < lauta.palautaKorkeus() && kayty[(hPaikka.y+1)*lauta.palautaLeveys()+hPaikka.x] == false && lauta.palautaRuutu(hPaikka.x, hPaikka.y+1).seina == false && hPaikka.kierros < this.havaintoEtaisyys) {
-//                lauta.palautaRuutu(hPaikka.x, hPaikka.y+1).havaittu = true;
-//                jono.add(new HavaintoPaikka(hPaikka.x, hPaikka.y+1, hPaikka.kierros+1));
-//            }
-//            if(hPaikka.x-1 > -1 && kayty[hPaikka.y*lauta.palautaLeveys()+(hPaikka.x-1)] == false && lauta.palautaRuutu(hPaikka.x-1, hPaikka.y).seina == false && hPaikka.kierros < this.havaintoEtaisyys) {
-//                lauta.palautaRuutu(hPaikka.x-1, hPaikka.y).havaittu = true;
-//                jono.add(new HavaintoPaikka(hPaikka.x-1, hPaikka.y, hPaikka.kierros+1));
-//            }
-//            if(hPaikka.x+1 < lauta.palautaLeveys() && kayty[hPaikka.y*lauta.palautaLeveys()+(hPaikka.x+1)] == false && lauta.palautaRuutu(hPaikka.x+1, hPaikka.y).seina == false && hPaikka.kierros < this.havaintoEtaisyys) {
-//                lauta.palautaRuutu(hPaikka.x+1, hPaikka.y).havaittu = true;
-//                jono.add(new HavaintoPaikka(hPaikka.x+1, hPaikka.y, hPaikka.kierros+1));
-//            }
-//        }
     }
 }

@@ -37,8 +37,9 @@ public class PelaajaTest {
     
     @Before
     public void setUp() {
-        this.pelaaja = new Pelaaja("Sankari", 1, 2, 10, 12, new Paikka(1,3));
         this.lauta = new Pelilauta(10,10);
+        this.lauta.tyhjennaRuudut();
+        this.pelaaja = new Pelaaja("Sankari", 1, 2, 10, 12, new Paikka(1,3));
     }
     
     @After

@@ -39,6 +39,7 @@ public class PelilautaTest {
     @Before
     public void setUp() {
         this.lauta = new Pelilauta(10, 12);
+        this.lauta.tyhjennaRuudut();
         this.otus = new Pelaaja("Sankari", 1, 2, 10, 12, new Paikka(1,1));
         this.paikka = new Paikka(1, 2);
     }

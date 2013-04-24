@@ -55,8 +55,4 @@ public class RuutuTest {
     public void konstruktoriAsettaaOtuksenNulliksi() {
         assertEquals(null, this.ruutu.otus);
     }
-//    @Test
-//    public void konstruktoriLuoTyhjanEsinelistan() {
-//        assertEquals(true, this.ruutu.esineet.isEmpty());
-//    }
 }

@@ -24,6 +24,9 @@ public class Monsteri extends Otus{
     }
     @Override
     public boolean liiku(int x, int y, Pelilauta lauta) {
+        if(this.merkki.equals("K")) {
+            return false;
+        }
         if(this.laskuri > -1 && this.laskuri < 3) {
             this.laskuri++;
             return lauta.lisaaOtusRuutuun(new Paikka(super.paikka.x+1, super.paikka.y), this);
@@ -46,5 +49,7 @@ public class Monsteri extends Otus{
             return lauta.lisaaOtusRuutuun(new Paikka(super.paikka.x, super.paikka.y-1), this);
         }
     }
-   
+   public int palautaLaskuri() {
+       return this.laskuri;
+   }
 }
