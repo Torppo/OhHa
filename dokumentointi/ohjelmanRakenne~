@@ -1,3 +1,0 @@
-Ohjelman rakenne
-
-Ohjelma koostuu pelilaudasta, joka luo ruutuja koordinaatistoon sekä luo ja lisää ruuutuihin monstereita. Monstereilla on paikka, joka kuvaa sen ruudun paikkaa, johon monsteri on asetettu. Pelaajalla on myös tieto sen ruudun paikasta johon pelaaja on sijoitettu, mutta pelaaja on luotu jo käyttöliittymän yhteydessä. Pelaaja ja Monsteri -luokat perivät abstraktin luokan Otus, mikä sisältää suurimman osan niiden metodeista ja atribuuteista. Monsterit ja pelaaja luovat aina hyökätessään niiden parametrien mukaan hyokkayksen, joka annetaan puolustautuvan otuksen puolustukselle.
