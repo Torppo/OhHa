@@ -6,6 +6,7 @@ package ohhaprojekti.Kayttoliittyma;
 
 import java.awt.Container;
 import java.awt.Dimension;
+import java.util.Random;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
@@ -27,7 +28,18 @@ public class Kayttoliittyma implements Runnable {
     public Kayttoliittyma(Pelaaja pelaaja) {
         this.lauta = new Pelilauta(20, 20);
         this.sankari = pelaaja;
-        this.lauta.lisaaOtusRuutuun(sankari.palautaPaikka(), sankari);
+        Random noppa = new Random();
+        
+        while(true) {
+            int x = noppa.nextInt(this.lauta.palautaLeveys());
+            int y = noppa.nextInt(this.lauta.palautaKorkeus());
+            if(this.lauta.palautaRuutu(x, y).seina == false) {
+                 this.lauta.lisaaOtusRuutuun(new Paikka(x,y), sankari);
+                 break;
+            }
+        }
+//        Monsteri monsu = new Monsteri(2, 1, 7, 9, new Paikka(3, 7));
+//        this.lauta.lisaaOtusRuutuun(monsu.palautaPaikka(), monsu);
         sankari.havaitse(lauta);
     }
     
@@ -40,7 +52,7 @@ public class Kayttoliittyma implements Runnable {
         this.kehys.pack();
         this.kehys.setVisible(true);
     }
-    
+
     private void luoKomponentit(Container container) {
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);

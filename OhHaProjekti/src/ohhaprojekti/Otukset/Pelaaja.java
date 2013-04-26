@@ -50,7 +50,7 @@ public class Pelaaja extends Otus {
     /**
      * Metodi saa paikan ja tarkistaa onko se pelaajan näköetäisyydellä phytagoraan lausetta apunaan käyttäen.
      * @param paikka on testattava paikka.
-     * @return 
+     * @return palauttaa true, jos ruutu on etäisyydellä tai false, jos ei.
      */
     public boolean onkoHavaintoEtaisyydella(Paikka paikka) {
         double etaisyys = Math.sqrt(Math.pow(paikka.x, 2) + Math.pow(paikka.y, 2));

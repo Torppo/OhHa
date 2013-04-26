@@ -27,15 +27,15 @@ public class Pelilauta {
             this.ruudut.add(new Ruutu());
         }
         Random noppa = new Random();
-        int monsterit = noppa.nextInt(((this.leveys * this.korkeus) + 1)/10);
+        int monsterit = noppa.nextInt(((this.leveys * this.korkeus) + 1)/noppa.nextInt(13+10));
         int seinat = noppa.nextInt(((this.leveys * this.korkeus) + 1)/2);
-        
         for (int i = 0; i < monsterit; i++){
             int k = noppa.nextInt(this.korkeus);
             int l = noppa.nextInt(this.leveys);
-            this.ruudut.get(k * this.leveys + l).otus = new Monsteri(2, 1, 7, 9, new Paikka(k, this.leveys+l));
+                Monsteri monsu = new Monsteri(2, 1, 7, 9, new Paikka(l, k));
+                this.lisaaOtusRuutuun(monsu.palautaPaikka(), monsu);
         }
-         
+
         for (int i = 0; i < seinat; i++){
             int k = noppa.nextInt(this.korkeus);
             int l = noppa.nextInt(this.leveys);
