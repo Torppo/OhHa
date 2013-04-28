@@ -45,7 +45,7 @@ public class Kayttoliittyma implements Runnable {
     
     @Override
     public void run() {
-        this.kehys = new JFrame("Pako!");
+        this.kehys = new JFrame("Putsaus palvelu");
         this.kehys.setPreferredSize(new Dimension(800, 800));
         this.kehys.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(this.kehys.getContentPane());

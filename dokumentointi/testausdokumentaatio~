@@ -1,0 +1,8 @@
+Testaus
+
+Pelin toiminnan kannalta tärkeät luokat on testattu JUnit -testeillä. Käyttöliittymä on sen sijaan 
+jouduttu testaamaan käsin. Manuaalisessa testaamisessa koodiin on lisätty tulostuskomentoja tärkeiden 
+tapahtumien jälkeen. Niiden tehtävänä on ollut tulostaa jokin muuttunut attribuutti. Ohjelmaa 
+ajettaessa on tarkistettu, että tulostukset ovat olleet haluttuja. Lisäksi Ohjelmaa ajettaessa on 
+tarkistettu, että graafinen käyttöliittymä näyttää halutut asiat. Näytettäviä asioita on muutettu ja 
+tarkistettu näyttääkö graafinen käyttöliittymä muutokset.

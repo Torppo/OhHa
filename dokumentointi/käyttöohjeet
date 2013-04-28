@@ -1,0 +1,5 @@
+Putsaus palvelu, on peli jossa sinut lähetetään putsaamaan asiakkaan kellari sinne asettuneista monstereista. Hahmosi näkyy ruudulla X:n muotoisena ja monsterit M:n muotoisena. Risuaidat ovat seiniä, joidenka läpi et pysty kulkemaan. 
+
+Ole varovainen, sillä saatat menehtyä tässä epäterveellisessä työssä. Monsterit ovat nimittäin hyvin vaarallisa, vaikkakin eivät älykkäitä. Niiden keskimääräisestä älykkyydestä saa jonkinlaisen kuvan siitä, että ne pyrkivät aina kulkemaan ympyrää. Jos satut kohtaamaan viikatemiehen matkallasi esittää hahmosi ruumista "K" niin kuin myös kaikkia kuolleita monstereita, joidenka ruumiita ei ole putsattu pois. Voit kuitenkin aina aloittaa pelin uudestaan käynnistämällä sen, jolloin pääset uuteen kellariin.
+
+Liikut nuolinäppäimillä ja koska peli on vuoropohjainen, liikkuvat kaikki yhden ruudun verran jokaisen nuolinäppimen painalluksen aikana. Kun tulet ruutuun, jossa on monsteri alkaa tappelu automaattisesti. Peli hoitaa itse taistelun. Jos voitat, pääset monsterin ruutuun ja siivoat ruumiin pois. Jos häviät, pelisi loppui. Pidä hauskaa!
